@@ -36,7 +36,7 @@ int main(int argc, char const *argv[])
 	}
 	if (argc == 4) {
 		domain = argv[3];
-		printf("Using Domain: %s \n", domain);
+		printf("Using Domain: %s \n", domain.c_str());
 	}
 	std::vector<std::string> Dictionary;
 	try
