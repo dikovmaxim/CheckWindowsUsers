@@ -29,10 +29,14 @@ bool CheckCredentials(std::string domain, std::string username, std::string pwd)
 int main(int argc, char const *argv[])
 {
 	std::string domain = getenv("COMPUTERNAME");
-	if (argc < 2) {
+	if (argc < 3) {
 		printf("Not enough arguments! \n");
-		printf("Usage: CheckUsers.exe userlist.txt passwords.txt >> output.txt \n");
+		printf("Usage: CheckUsers.exe userlist.txt passwords.txt [domain] >> output.txt \n");
 		return 0;
+	}
+	if (argc == 4) {
+		domain = argv[3];
+		printf("Using Domain: %s \n", domain);
 	}
 	std::vector<std::string> Dictionary;
 	try
